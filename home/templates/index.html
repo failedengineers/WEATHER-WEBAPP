@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+<div class="app">
+
+    <div class="card">
+
+        <div class="top">
+            <h1>Weather Pro</h1>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Search city...">
+                <button onclick="getWeather()">Search</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">Loading...</div>
+        <div id="error" class="error hidden"></div>
+
+        <div id="weather" class="weather hidden">
+
+            <div class="main-info">
+                <h2 id="cityName"></h2>
+                <img id="weatherIcon">
+                <div id="temperature" class="temp"></div>
+                <div id="description" class="desc"></div>
+            </div>
+
+            <div class="details">
+                <div class="box">
+                    <span>Humidity</span>
+                    <p id="humidity"></p>
+                </div>
+                <div class="box">
+                    <span>Wind</span>
+                    <p id="wind"></p>
+                </div>
+                <div class="box">
+                    <span>Feels Like</span>
+                    <p id="feels_like"></p>
+                </div>
+                <div class="box">
+                    <span>Pressure</span>
+                    <p id="pressure"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{% static 'app.js' %}"></script>
+</body>
+</html>
